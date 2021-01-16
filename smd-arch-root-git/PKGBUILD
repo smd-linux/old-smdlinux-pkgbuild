@@ -1,0 +1,34 @@
+# Maintainer: Seth Dawson <seth.dawson@hotmail.com>
+pkgname=smd-arch-root-git
+_pkgname=smd-arch-root
+_destname1="/etc/skel/"
+_licensedir="/usr/share/smd-arch/licenses/"
+pkgver=1.1
+pkgrel=5
+pkgdesc="root configs for smd-arch"
+arch=('any')
+url="https://github.com/smd-linux/smd-arch-root"
+license=('GPL3')
+makedepends=('git')
+depends=('bash')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}.git")
+sha256sums=('SKIP')
+install='readme.install'
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.aliases ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.bashrc-latest ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.conkyrc ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.dmrc ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.gtkrc-2.0 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.xinitrc ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.Xresources ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.xsession ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.xsessionrc ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.zshrc-latest ${pkgdir}${_destname1}
+}

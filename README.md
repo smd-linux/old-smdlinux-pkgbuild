@@ -1,0 +1,1 @@
+# smdlinux-pkgbuild

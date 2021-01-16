@@ -1,0 +1,23 @@
+# Maintainer: Seth Dawson <seth@sethdawson.me>
+pkgname=smd-arch-dummy
+_pkgname=smd-arch-root
+_destname1="/etc/skel/"
+_licensedir="/usr/share/smd-arch/licenses/"
+pkgver=1.2
+pkgrel=1
+pkgdesc="dummy package"
+arch=('any')
+url="https://github.com/smd-linux/smd-arch-root"
+license=('GPL3')
+makedepends=('git')
+depends=()
+optdepends=()
+replace=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}.git")
+sha256sums=('SKIP')
+install='readme.install'
+package() {
+echo
+}
