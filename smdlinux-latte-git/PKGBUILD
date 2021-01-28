@@ -1,16 +1,16 @@
 # Maintainer: Seth Dawson <seth@sethdawson.me>
-pkgname=smdlinux-neofetch-git
-_pkgname=smdlinux-neofetch
-_destname1="/etc/skel/.config/neofetch/"
+pkgname=smdlinux-latte-git
+_pkgname=smdlinux-latte-layout
+_destname1="/etc/skel/.config/latte/"
 _licensedir="/usr/share/smdlinux/licenses/"
-pkgver=1.2
+pkgver=2.0.0
 pkgrel=1
-pkgdesc="neofetch config for smdlinux"
+pkgdesc="latte dock config for smdlinux"
 arch=('any')
-url="https://github.com/smd-linux/smdlinux-neofetch"
+url="https://github.com/smd-linux/smdlinux-latte-layout"
 license=('GPL3')
 makedepends=('git')
-depends=('bash' 'python')
+depends=( )
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}.git")
