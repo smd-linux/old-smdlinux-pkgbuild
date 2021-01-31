@@ -1,19 +1,19 @@
-# Maintainer: Seth Dawson <seth@sethdawson.me>
-pkgname=smdlinux-latte-git
-_pkgname=smdlinux-latte-layout
-_destname1="/etc/skel/.config/"
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=smdlinux-bin-git
+_pkgname=smdlinux-bin
+_destname1="/etc/skel/.bin/"
 _licensedir="/usr/share/smdlinux/licenses/"
-pkgver=2.0.0
-pkgrel=5
-pkgdesc="latte dock config for smdlinux"
+pkgver=20.12
+pkgrel=4
+pkgdesc=".bin folder from smdlinux providing fun and useful scripts"
 arch=('any')
-url="https://github.com/smd-linux/smdlinux-latte-layout"
+url="https://github.com/smd-linux/smdlinux-bin"
 license=('GPL3')
 makedepends=('git')
-depends=( )
+depends=('bash' 'wmctrl' 'pacman-contrib')
 provides=("${pkgname}")
-options=(!strip !emptydirs)
-source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}.git")
+#options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}")
 sha256sums=('SKIP')
 install='readme.install'
 package() {

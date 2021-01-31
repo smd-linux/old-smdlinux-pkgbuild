@@ -1,13 +1,13 @@
 # Maintainer: Seth Dawson <seth.dawson@hotmail.com>
-pkgname=smd-arch-root-git
-_pkgname=smd-arch-root
+pkgname=smdlinux-root-git
+_pkgname=smdlinux-root
 _destname1="/etc/skel/"
-_licensedir="/usr/share/smd-arch/licenses/"
-pkgver=1.1
-pkgrel=5
-pkgdesc="root configs for smd-arch"
+_licensedir="/usr/share/smdlinux/licenses/"
+pkgver=2.0.0
+pkgrel=1
+pkgdesc="root configs for smd-linux"
 arch=('any')
-url="https://github.com/smd-linux/smd-arch-root"
+url="https://github.com/smd-linux/smdlinux-root"
 license=('GPL3')
 makedepends=('git')
 depends=('bash')
@@ -21,14 +21,10 @@ package() {
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
 
 	install -dm755 ${pkgdir}${_destname1}
-	cp -r  ${srcdir}/${_pkgname}${_destname1}.aliases ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname1}.bashrc-latest ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname1}.conkyrc ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname1}.dmrc ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.face ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname1}.gtkrc-2.0 ${pkgdir}${_destname1}
-	cp -r  ${srcdir}/${_pkgname}${_destname1}.xinitrc ${pkgdir}${_destname1}
-	cp -r  ${srcdir}/${_pkgname}${_destname1}.Xresources ${pkgdir}${_destname1}
-	cp -r  ${srcdir}/${_pkgname}${_destname1}.xsession ${pkgdir}${_destname1}
-	cp -r  ${srcdir}/${_pkgname}${_destname1}.xsessionrc ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname1}.zshrc-latest ${pkgdir}${_destname1}
 }
