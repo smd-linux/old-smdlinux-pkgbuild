@@ -1,10 +1,10 @@
 # Maintainer: Seth Dawson <seth@sethdawson.me>
 pkgname=smdlinux-konsole-git
 _pkgname=smdlinux-konsole
-_destname1="/etc/skel/.config/"
+_destname1="/etc"
 _licensedir="/usr/share/smdlinux/licenses/"
-pkgver=1.0
-pkgrel=1
+pkgver=2.0.0
+pkgrel=3
 pkgdesc="konsole config for smdlinux"
 arch=('any')
 url="https://github.com/smd-linux/smdlinux-konsole"
@@ -20,6 +20,5 @@ package() {
 	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
 
-	install -dm755 ${pkgdir}${_destname1}
-	install -m644  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname} ${pkgdir}${_destname}
 }

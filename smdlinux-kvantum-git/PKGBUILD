@@ -1,13 +1,13 @@
-# Maintainer: Seth Dawson <seth@sethdawson.me>
-pkgname=smd-arch-kvantum-git
-_pkgname=smd-arch-kvantum
+# Maintainer: Seth Dawson <seth.dawson@hotmail.com>
+pkgname=smdlinux-kvantum-git
+_pkgname=smdlinux-kvantum
 _destname1="/etc/skel/.config/"
-_licensedir="/usr/share/smd-arch/licenses/"
-pkgver=1.1
+_licensedir="/usr/share/smdlinux/licenses/"
+pkgver=2.0.0
 pkgrel=1
-pkgdesc="configuration files for ArcoLinux"
+pkgdesc="configuration files for SMD-Linux"
 arch=('any')
-url="https://github.com/smd-linux/smd-arch-kvantum"
+url="https://github.com/smd-linux/smdlinux-kvantum"
 license=('GPL3')
 makedepends=('git')
 depends=()
