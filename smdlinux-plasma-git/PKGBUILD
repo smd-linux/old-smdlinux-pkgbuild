@@ -1,20 +1,19 @@
 # Maintainer: Seth Dawson <seth.dawson@hotmail.com>
-pkgname=smdlinux-conky-plasma-git
-_pkgname=smdlinux-conky-plasma
-_destname1="/etc/skel/.config/conky/"
-_destname2="/etc/skel/.config/autostart/"
-_destname3="/usr/share/applications/"
-_destname4="/usr/local/bin/"
+pkgname=smdlinux-plasma-git
+_pkgname=smdlinux-plasma
+_destname1="/etc/skel/.config/"
+_destname2="/etc/skel/.local/share/"
+_destname3="/etc/xdg/"
 _licensedir="/usr/share/smdlinux/licenses/"
 pkgver=2.0.0
 pkgrel=1
-pkgdesc="Conky themes for SMD Linux KDE Plasma"
+pkgdesc="SMD-Linux Plasma Desktop Settings"
 arch=('any')
-url="https://github.com/smd-linux/smdlinux-conky-plasma"
+url="https://github.com/smd-linux/smdlinux-plasma"
 license=('GPL3')
 makedepends=('git')
-depends=('python' 'bash')
-conflicts=('smdlinux-conky-git')
+depends=()
+conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=(${_pkgname}::"git+https://github.com/smd-linux/${_pkgname}.git")
@@ -31,8 +30,5 @@ package() {
 	cp -r  ${srcdir}/${_pkgname}${_destname2}* ${pkgdir}${_destname2}
 
 	install -dm755 ${pkgdir}${_destname3}
-	cp -r  ${srcdir}/${_pkgname}${_destname3}* ${pkgdir}${_destname3}
-
-	install -dm755 ${pkgdir}${_destname4}
-	cp -r  ${srcdir}/${_pkgname}${_destname4}* ${pkgdir}${_destname4}		
+	cp -r  ${srcdir}/${_pkgname}${_destname3}* ${pkgdir}${_destname3}	
 }

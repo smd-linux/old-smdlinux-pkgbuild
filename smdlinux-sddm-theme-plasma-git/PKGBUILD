@@ -2,8 +2,9 @@
 pkgname=smdlinux-sddm-theme-plasma-git
 _pkgname=smdlinux-sddm-theme-plasma
 _destname1="/usr"
+_destname2="/etc/sddm.conf.d/"
 _licensedir="/usr/share/smdlinux/licenses/"
-pkgver=0.1
+pkgver=2.0.0
 pkgrel=1
 pkgdesc="SMDLinux SDDM theme for KDE Plasma"
 arch=('any')
@@ -20,4 +21,8 @@ package() {
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
 
 	cp -r ${srcdir}/${_pkgname}/${_destname1} ${pkgdir}
+	#cp -r ${srcdir}/${_pkgname}/${_destname2} ${pkgdir}
+
+	install -dm755 ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname2}* ${pkgdir}${_destname2}
 }
